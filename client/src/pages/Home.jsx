@@ -90,34 +90,36 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold text-primary mb-12">Why Choose Us?</h2>
 
-                    <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
-                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                            <FaChartLine size={32} />
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
+                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                                <FaChartLine size={32} />
+                            </div>
+                            <h3 className="text-xl font-bold mb-4">Potential ROI</h3>
+                            <p className="text-gray-600">
+                                Maximize your investment with our data-driven strategies and market expertise.
+                            </p>
                         </div>
-                        <h3 className="text-xl font-bold mb-4">Potential ROI</h3>
-                        <p className="text-gray-600">
-                            Maximize your investment with our data-driven strategies and market expertise.
-                        </p>
-                    </div>
 
-                    <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
-                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                            <FaDraftingCompass size={32} />
+                        <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
+                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                                <FaDraftingCompass size={32} />
+                            </div>
+                            <h3 className="text-xl font-bold mb-4">Design</h3>
+                            <p className="text-gray-600">
+                                World-class architectural and interior design suggestions to increase property value.
+                            </p>
                         </div>
-                        <h3 className="text-xl font-bold mb-4">Design</h3>
-                        <p className="text-gray-600">
-                            World-class architectural and interior design suggestions to increase property value.
-                        </p>
-                    </div>
 
-                    <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
-                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                            <FaBullhorn size={32} />
+                        <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
+                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                                <FaBullhorn size={32} />
+                            </div>
+                            <h3 className="text-xl font-bold mb-4">Marketing</h3>
+                            <p className="text-gray-600">
+                                Strategic marketing campaigns that reach the right audience at the right time.
+                            </p>
                         </div>
-                        <h3 className="text-xl font-bold mb-4">Marketing</h3>
-                        <p className="text-gray-600">
-                            Strategic marketing campaigns that reach the right audience at the right time.
-                        </p>
                     </div>
                 </div>
             </section>
@@ -134,7 +136,7 @@ const Home = () => {
                                 <div key={project._id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
                                     <div className="h-48 overflow-hidden">
                                         <img
-                                            src={project.image ? `http://localhost:5000${project.image}` : "https://via.placeholder.com/400x300"}
+                                            src={project.image.startsWith('http') ? project.image : `http://localhost:5000${project.image}`}
                                             alt={project.title}
                                             className="w-full h-full object-cover transform hover:scale-110 transition duration-500"
                                         />
@@ -163,7 +165,7 @@ const Home = () => {
                                     <div className="flex flex-col items-center">
                                         <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-4 border-white shadow-md">
                                             <img
-                                                src={client.image ? `http://localhost:5000${client.image}` : "https://via.placeholder.com/150"}
+                                                src={client.image.startsWith('http') ? client.image : `http://localhost:5000${client.image}`}
                                                 alt={client.name}
                                                 className="w-full h-full object-cover"
                                             />
