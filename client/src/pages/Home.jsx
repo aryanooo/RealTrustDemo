@@ -15,18 +15,21 @@ const Home = () => {
 
     useEffect(() => {
         // Fetch Projects
-        axios.get('http://localhost:5000/api/projects') // Update this with Render URL later
+        axios.get('http://localhost:5000/api/projects')
             .then(res => setProjects(res.data))
             .catch(err => console.error(err));
 
         // Fetch Clients
-        axios.get('http://localhost:5000/api/clients') // Update this with Render URL later
+        axios.get('http://localhost:5000/api/clients')
             .then(res => setClients(res.data))
             .catch(err => console.error(err));
     }, []);
 
     return (
-        <div className="font-sans text-gray-800 bg-watermark">
+        <div className="font-sans text-gray-800 relative">
+            {/* Watermark Background Layer */}
+            <div className="fixed inset-0 z-[-1] bg-svg-watermark pointer-events-none"></div>
+
             <Navbar />
 
             {/* HERO SECTION */}
@@ -64,7 +67,7 @@ const Home = () => {
             </section>
 
             {/* "NOT YOUR AVERAGE REALTOR" SECTION */}
-            <section className="py-20 bg-transparent relative overflow-hidden">
+            <section className="py-20 bg-white relative overflow-hidden">
                 {/* Background Decorative Rings */}
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] border border-blue-50 rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] border border-blue-50 rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
@@ -89,31 +92,42 @@ const Home = () => {
                     </div>
 
                     {/* Right: Image Collage */}
-                    <div className="md:w-7/12 relative flex justify-center md:justify-end items-center h-[500px]">
-                        {/* Main Center Image - Man holding house model */}
-                        <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white shadow-2xl overflow-hidden z-20 bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1560518883-ce09059ee971?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Realtor with House Model" className="w-full h-full object-cover" />
+                    <div className="md:w-7/12 relative flex justify-center items-center">
+                        {/* Background SVG Shape */}
+                        <div className="absolute inset-0 flex justify-center items-center z-0 scale-125 translate-x-12 translate-y-4">
+                            <svg width="940" height="1072" viewBox="0 0 940 1072" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto max-w-2xl opacity-100">
+                                <ellipse cx="539" cy="536" rx="539" ry="536" fill="#217BF4" fillOpacity="0.02" />
+                            </svg>
                         </div>
 
-                        {/* Top Right Small Image - Couple receiving keys */}
-                        <div className="absolute top-0 right-0 md:-right-4 w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white shadow-xl overflow-hidden z-10 bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Couple with Keys" className="w-full h-full object-cover" />
-                        </div>
+                        {/* Images Container */}
+                        <div className="relative z-10 flex items-center gap-8">
+                            {/* Main Center Image (Left in this group) */}
+                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-[6px] border-white shadow-2xl overflow-hidden bg-white">
+                                <img src="https://images.unsplash.com/photo-1560518883-ce09059ee971?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Realtor with House Model" className="w-full h-full object-cover" />
+                            </div>
 
-                        {/* Bottom Right Small Image - Man with house cutout */}
-                        <div className="absolute bottom-0 right-10 md:right-10 w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white shadow-xl overflow-hidden z-30 bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Realtor with House Sign" className="w-full h-full object-cover" />
-                        </div>
+                            {/* Right Column Images */}
+                            <div className="flex flex-col gap-8">
+                                {/* Top Right Small Image */}
+                                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full border-[6px] border-white shadow-xl overflow-hidden bg-white">
+                                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Couple with Keys" className="w-full h-full object-cover" />
+                                </div>
 
-                        {/* Floating Dots */}
-                        <div className="absolute top-20 left-1/4 w-8 h-8 bg-[#3B82F6] rounded-full"></div>
-                        <div className="absolute bottom-32 left-1/3 w-4 h-4 bg-[#F97316] rounded-full"></div>
+                                {/* Bottom Right Small Image */}
+                                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full border-[6px] border-white shadow-xl overflow-hidden bg-white">
+                                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Happy Homeowners" className="w-full h-full object-cover" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+
                 </div>
             </section>
 
             {/* "WHY CHOOSE US" SECTION */}
-            <section className="py-20 bg-transparent" id="services">
+            <section className="py-20 bg-white" id="services">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div className="mb-16">
                         <h2 className="text-3xl font-bold text-[#3B82F6] mb-2">Why Choose Us?</h2>
@@ -158,7 +172,7 @@ const Home = () => {
             </section>
 
             {/* ABOUT US & COLLAGE SECTION */}
-            <section className="py-20 bg-transparent relative overflow-hidden">
+            <section className="py-20 bg-white relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Background decorative elements */}
                     <div className="absolute top-0 left-0 w-64 h-64 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 -translate-x-1/2"></div>
@@ -241,7 +255,7 @@ const Home = () => {
             </section>
 
             {/* HAPPY CLIENTS SECTION */}
-            <section className="py-20 bg-transparent" id="testimonials">
+            <section className="py-20 bg-white" id="testimonials">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold text-primary mb-12">Happy Clients</h2>
                     {clients.length === 0 ? (

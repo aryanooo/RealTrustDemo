@@ -78,8 +78,8 @@ const seedDB = async () => {
     console.log('Connected to MongoDB Atlas...');
 
     // Clear existing data (optional, be careful!)
-    // await Project.deleteMany({});
-    // await Client.deleteMany({});
+    await Project.deleteMany({});
+    await Client.deleteMany({});
 
     await Project.insertMany(projects);
     console.log('Projects Seeded');
