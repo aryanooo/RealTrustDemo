@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
@@ -22,10 +23,10 @@ const AdminDashboard = () => {
     }, [navigate]);
 
     const fetchData = () => {
-        axios.get('http://localhost:5000/api/projects').then(res => setProjects(res.data));
-        axios.get('http://localhost:5000/api/clients').then(res => setClients(res.data));
-        axios.get('http://localhost:5000/api/contact').then(res => setContacts(res.data));
-        axios.get('http://localhost:5000/api/subscribe').then(res => setSubscriptions(res.data));
+        axios.get(`${API_URL}/api/projects`).then(res => setProjects(res.data));
+        axios.get(`${API_URL}/api/clients`).then(res => setClients(res.data));
+        axios.get(`${API_URL}/api/contact`).then(res => setContacts(res.data));
+        axios.get(`${API_URL}/api/subscribe`).then(res => setSubscriptions(res.data));
     };
 
     const handleLogout = () => {
@@ -42,7 +43,7 @@ const AdminDashboard = () => {
         formData.append('image', newProject.image);
 
         try {
-            await axios.post('http://localhost:5000/api/projects', formData, {
+            await axios.post(`${API_URL}/api/projects`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             setNewProject({ title: '', description: '', image: null });
@@ -56,7 +57,7 @@ const AdminDashboard = () => {
 
     const handleDeleteProject = async (id) => {
         if (window.confirm('Delete project?')) {
-            await axios.delete(`http://localhost:5000/api/projects/${id}`);
+            await axios.delete(`${API_URL}/api/projects/${id}`);
             fetchData();
         }
     };
@@ -71,7 +72,7 @@ const AdminDashboard = () => {
         formData.append('image', newClient.image);
 
         try {
-            await axios.post('http://localhost:5000/api/clients', formData, {
+            await axios.post(`${API_URL}/api/clients`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             setNewClient({ name: '', designation: '', description: '', image: null });
@@ -85,7 +86,7 @@ const AdminDashboard = () => {
 
     const handleDeleteClient = async (id) => {
         if (window.confirm('Delete client?')) {
-            await axios.delete(`http://localhost:5000/api/clients/${id}`);
+            await axios.delete(`${API_URL}/api/clients/${id}`);
             fetchData();
         }
     };

@@ -8,6 +8,7 @@ import { FaDraftingCompass, FaChartLine, FaBullhorn } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const HERO_BG = "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80";
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const Home = () => {
     const [projects, setProjects] = useState([]);
@@ -15,12 +16,12 @@ const Home = () => {
 
     useEffect(() => {
         // Fetch Projects
-        axios.get('http://localhost:5000/api/projects')
+        axios.get(`${API_URL}/api/projects`)
             .then(res => setProjects(res.data))
             .catch(err => console.error(err));
 
         // Fetch Clients
-        axios.get('http://localhost:5000/api/clients')
+        axios.get(`${API_URL}/api/clients`)
             .then(res => setClients(res.data))
             .catch(err => console.error(err));
     }, []);
@@ -235,7 +236,7 @@ const Home = () => {
                                 <div key={project._id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
                                     <div className="h-48 overflow-hidden">
                                         <img
-                                            src={project.image.startsWith('http') ? project.image : `http://localhost:5000${project.image}`}
+                                            src={project.image.startsWith('http') ? project.image : `${API_URL}${project.image}`}
                                             alt={project.title}
                                             className="w-full h-full object-cover transform hover:scale-110 transition duration-500"
                                         />
@@ -266,7 +267,7 @@ const Home = () => {
                                 <div key={client._id} className="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
                                     <div className="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-white shadow-md">
                                         <img
-                                            src={client.image.startsWith('http') ? client.image : `http://localhost:5000${client.image}`}
+                                            src={client.image.startsWith('http') ? client.image : `${API_URL}${client.image}`}
                                             alt={client.name}
                                             className="w-full h-full object-cover"
                                         />
