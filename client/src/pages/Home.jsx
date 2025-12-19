@@ -64,7 +64,7 @@ const Home = () => {
             </section>
 
             {/* "NOT YOUR AVERAGE REALTOR" SECTION */}
-            <section className="py-20 bg-white relative overflow-hidden">
+            <section className="py-20 bg-transparent relative overflow-hidden">
                 {/* Background Decorative Rings */}
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] border border-blue-50 rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] border border-blue-50 rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
@@ -113,7 +113,7 @@ const Home = () => {
             </section>
 
             {/* "WHY CHOOSE US" SECTION */}
-            <section className="py-20 bg-white" id="services">
+            <section className="py-20 bg-transparent" id="services">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div className="mb-16">
                         <h2 className="text-3xl font-bold text-[#3B82F6] mb-2">Why Choose Us?</h2>
@@ -158,7 +158,7 @@ const Home = () => {
             </section>
 
             {/* ABOUT US & COLLAGE SECTION */}
-            <section className="py-20 bg-white relative overflow-hidden">
+            <section className="py-20 bg-transparent relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Background decorative elements */}
                     <div className="absolute top-0 left-0 w-64 h-64 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 -translate-x-1/2"></div>
@@ -241,7 +241,7 @@ const Home = () => {
             </section>
 
             {/* HAPPY CLIENTS SECTION */}
-            <section className="py-20 bg-white" id="testimonials">
+            <section className="py-20 bg-transparent" id="testimonials">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold text-primary mb-12">Happy Clients</h2>
                     {clients.length === 0 ? (
