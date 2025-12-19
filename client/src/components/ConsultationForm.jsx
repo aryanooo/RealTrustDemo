@@ -28,12 +28,11 @@ const ConsultationForm = () => {
     };
 
     return (
-        <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
-            <h3 className="text-2xl font-bold text-center text-primary mb-2">Get a Free Consultation</h3>
-            <p className="text-center text-gray-500 mb-6 text-sm">Fill out the form and our team will get back to you within 24 hours.</p>
+        <div className="bg-[#1E3A8A]/90 backdrop-blur-sm p-8 rounded-lg shadow-2xl max-w-md w-full border border-white/20">
+            <h3 className="text-xl font-bold text-center text-white mb-6">Get a Free<br />Consultation</h3>
 
-            {status === 'success' && <p className="text-green-600 text-center mb-4">Request sent successfully!</p>}
-            {status === 'error' && <p className="text-red-600 text-center mb-4">Something went wrong. Try again.</p>}
+            {status === 'success' && <p className="text-green-400 text-center mb-4 text-sm">Request sent successfully!</p>}
+            {status === 'error' && <p className="text-red-400 text-center mb-4 text-sm">Something went wrong. Try again.</p>}
 
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -44,18 +43,18 @@ const ConsultationForm = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-4 py-2 bg-transparent border border-white/30 rounded text-white placeholder-gray-300 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 text-sm transition"
                     />
                 </div>
                 <div>
                     <input
                         type="email"
                         name="email"
-                        placeholder="Email Address"
+                        placeholder="Enter Email Address"
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-4 py-2 bg-transparent border border-white/30 rounded text-white placeholder-gray-300 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 text-sm transition"
                     />
                 </div>
                 <div>
@@ -66,23 +65,23 @@ const ConsultationForm = () => {
                         value={formData.mobile}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-4 py-2 bg-transparent border border-white/30 rounded text-white placeholder-gray-300 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 text-sm transition"
                     />
                 </div>
                 <div>
                     <input
                         type="text"
                         name="city"
-                        placeholder="Town / City"
+                        placeholder="Area, City"
                         value={formData.city}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-4 py-2 bg-transparent border border-white/30 rounded text-white placeholder-gray-300 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 text-sm transition"
                     />
                 </div>
                 <button
                     type="submit"
-                    className="w-full bg-secondary text-white font-bold py-3 rounded-lg hover:bg-orange-600 transition duration-300 transform hover:scale-105"
+                    className="w-full bg-[#F97316] text-white font-bold py-3 rounded hover:bg-orange-600 transition duration-300 mt-4 text-sm"
                 >
                     Get Quick Quote
                 </button>

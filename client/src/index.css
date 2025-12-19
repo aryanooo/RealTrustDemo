@@ -10,3 +10,13 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
+
+.bg-watermark {
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.05) 0%, rgba(30, 58, 138, 0.05) 50px, transparent 51px),
+        radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.05) 0%, rgba(249, 115, 22, 0.05) 60px, transparent 61px),
+        linear-gradient(45deg, transparent 48%, rgba(30, 58, 138, 0.03) 49%, rgba(30, 58, 138, 0.03) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(30, 58, 138, 0.03) 49%, rgba(30, 58, 138, 0.03) 51%, transparent 52%);
+    background-attachment: fixed;
+    background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+}

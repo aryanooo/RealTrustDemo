@@ -7,7 +7,7 @@ import ConsultationForm from '../components/ConsultationForm';
 import { FaDraftingCompass, FaChartLine, FaBullhorn } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
-const HERO_BG = "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80";
+const HERO_BG = "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80";
 
 const Home = () => {
     const [projects, setProjects] = useState([]);
@@ -26,7 +26,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="font-sans text-gray-800">
+        <div className="font-sans text-gray-800 bg-watermark">
             <Navbar />
 
             {/* HERO SECTION */}
@@ -44,7 +44,7 @@ const Home = () => {
                     >
                         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
                             Consultation, <br />
-                            <span className="text-secondary">Design,</span> <br />
+                            Design, <br />
                             & Marketing
                         </h1>
                         <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-lg">
@@ -64,23 +64,50 @@ const Home = () => {
             </section>
 
             {/* "NOT YOUR AVERAGE REALTOR" SECTION */}
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
-                    <div className="md:w-1/2 mb-10 md:mb-0 relative">
-                        <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-secondary mx-auto">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Realtor" className="w-full h-full object-cover" />
-                        </div>
-                        <div className="absolute top-0 right-10 w-20 h-20 bg-secondary rounded-full opacity-20 -z-10"></div>
-                        <div className="absolute bottom-10 left-10 w-32 h-32 bg-primary rounded-full opacity-20 -z-10"></div>
+            <section className="py-20 bg-white relative overflow-hidden">
+                {/* Background Decorative Rings */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] border border-blue-50 rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] border border-blue-50 rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
+
+                {/* Decorative Dots Grid (Bottom Left) */}
+                <div className="absolute bottom-20 left-10 hidden md:grid grid-cols-6 gap-2 opacity-20 pointer-events-none">
+                    {[...Array(24)].map((_, i) => (
+                        <div key={i} className="w-1.5 h-1.5 bg-gray-300 rounded-full"></div>
+                    ))}
+                </div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center relative z-10">
+                    {/* Left: Text Content */}
+                    <div className="md:w-5/12 mb-16 md:mb-0 text-center md:text-left relative">
+                        {/* Large faint circle decorations behind text */}
+                        <div className="absolute -left-20 top-1/2 w-64 h-64 bg-blue-50 rounded-full filter blur-3xl opacity-50 -z-10"></div>
+
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#3B82F6] mb-6">Not Your Average Realtor</h2>
+                        <p className="text-gray-500 leading-relaxed text-sm md:text-base max-w-lg mx-auto md:mx-0">
+                            Real Trust has an eye for seeing a property's potential, coordinating design, and effectively marketing to get homeowners top dollar on their sales.
+                        </p>
                     </div>
-                    <div className="md:w-1/2 md:pl-16 text-center md:text-left">
-                        <h2 className="text-3xl font-bold text-primary mb-4">Not Your Average Realtor</h2>
-                        <p className="text-gray-600 leading-relaxed mb-6">
-                            Real Trust is innovative and creative. We don't just sell houses; we verify emotions and lifestyle. Our team of experts ensures that every step of your journey is seamless and rewarding.
-                        </p>
-                        <p className="text-gray-600 leading-relaxed mb-6">
-                            We leverage the latest technology and market insights to give you an edge. Whether buying, selling, or investing, we are your trusted partners.
-                        </p>
+
+                    {/* Right: Image Collage */}
+                    <div className="md:w-7/12 relative flex justify-center md:justify-end items-center h-[500px]">
+                        {/* Main Center Image - Man holding house model */}
+                        <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white shadow-2xl overflow-hidden z-20 bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059ee971?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Realtor with House Model" className="w-full h-full object-cover" />
+                        </div>
+
+                        {/* Top Right Small Image - Couple receiving keys */}
+                        <div className="absolute top-0 right-0 md:-right-4 w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white shadow-xl overflow-hidden z-10 bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Couple with Keys" className="w-full h-full object-cover" />
+                        </div>
+
+                        {/* Bottom Right Small Image - Man with house cutout */}
+                        <div className="absolute bottom-0 right-10 md:right-10 w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white shadow-xl overflow-hidden z-30 bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Realtor with House Sign" className="w-full h-full object-cover" />
+                        </div>
+
+                        {/* Floating Dots */}
+                        <div className="absolute top-20 left-1/4 w-8 h-8 bg-[#3B82F6] rounded-full"></div>
+                        <div className="absolute bottom-32 left-1/3 w-4 h-4 bg-[#F97316] rounded-full"></div>
                     </div>
                 </div>
             </section>
