@@ -7,19 +7,29 @@ dotenv.config();
 
 const projects = [
   {
-    title: 'Luxury Villa in Beverly Hills',
-    description: 'A stunning 5-bedroom villa with panoramic views, infinity pool, and smart home integration. Designed for ultimate comfort and luxury.',
-    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    title: 'Consulting',
+    description: 'Expert advice to navigate the complex real estate market with confidence.',
+    image: 'https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
   },
   {
-    title: 'Modern Downtown Apartment',
-    description: 'Sleek and contemporary apartment in the heart of the city. Features open-plan living, floor-to-ceiling windows, and high-end finishes.',
-    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    title: 'Design',
+    description: 'Innovative architectural and interior design solutions tailored to your lifestyle.',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
   },
   {
-    title: 'Cozy Suburban Family Home',
-    description: 'Perfect family home with a spacious backyard, modern kitchen, and close proximity to top-rated schools.',
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    title: 'Marketing & Design',
+    description: 'A holistic approach combining aesthetic excellence with strategic market positioning.',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Consultation & Marketing',
+    description: 'Strategic consultation paired with aggressive marketing to maximize your property value.',
+    image: 'https://images.unsplash.com/photo-1512915922610-d313a4e38505?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    title: 'Consultation',
+    description: 'Personalized consultation services to address your unique real estate needs.',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
   }
 ];
 
@@ -27,21 +37,39 @@ const clients = [
   {
     name: 'Sarah Johnson',
     designation: 'Homeowner',
+    location: 'Beverly Hills, CA',
     description: 'Real Trust helped us find our dream home! Their team was professional, patient, and understood exactly what we were looking for.',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
   },
   {
     name: 'Michael Chen',
     designation: 'Property Investor',
+    location: 'New York, NY',
     description: 'I have worked with many real estate agencies, but Real Trust stands out. Their market insights and ROI analysis are top-notch.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
   },
   {
     name: 'Emily Davis',
     designation: 'Architect',
-    description: 'As an architect, I appreciate their eye for design and detail. They truly care about the aesthetic and functional quality of the properties they sell.',
+    location: 'Austin, TX',
+    description: 'As an architect, I appreciate their eye for design and detail. They truly care about the aesthetic and functional quality.',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
+  },
+  {
+    name: 'David Wilson',
+    designation: 'Software Engineer',
+    location: 'San Francisco, CA',
+    description: 'The process was incredibly smooth. They handled everything from the initial search to the final closing paperwork.',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
+  },
+  {
+    name: 'Jessica Lee',
+    designation: 'Interior Designer',
+    location: 'Miami, FL',
+    description: 'I love collaborating with Real Trust. They understand the value of design and how it impacts property value.',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
   }
+
 ];
 
 const seedDB = async () => {

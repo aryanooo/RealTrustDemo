@@ -12,8 +12,9 @@ const Navbar = () => {
                 <div className="flex justify-between h-20 items-center">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
-                        <Link to="/" className="text-3xl font-bold text-primary">
-                            Real <span className="text-secondary">Trust</span>
+                        <Link to="/" className="flex items-center">
+                            <img src="/src/assets/logo.png" alt="Real Trust Logo" className="h-12 w-auto" />
+                            <span className="ml-2 text-2xl font-bold text-primary">Real <span className="text-primary font-normal">Trust</span></span>
                         </Link>
                     </div>
 

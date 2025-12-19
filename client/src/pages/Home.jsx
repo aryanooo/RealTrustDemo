@@ -88,37 +88,95 @@ const Home = () => {
             {/* "WHY CHOOSE US" SECTION */}
             <section className="py-20 bg-white" id="services">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl font-bold text-primary mb-12">Why Choose Us?</h2>
+                    <div className="mb-16">
+                        <h2 className="text-3xl font-bold text-[#3B82F6] mb-2">Why Choose Us?</h2>
+                        <div className="w-16 h-1 bg-[#3B82F6] mx-auto rounded-full"></div>
+                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
-                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                                <FaChartLine size={32} />
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+                        {/* Item 1 */}
+                        <div className="flex flex-col items-center">
+                            <div className="w-20 h-20 rounded-full border-2 border-[#3B82F6] flex items-center justify-center mb-6 bg-white">
+                                <FaDraftingCompass size={32} className="text-[#3B82F6]" />
                             </div>
-                            <h3 className="text-xl font-bold mb-4">Potential ROI</h3>
-                            <p className="text-gray-600">
-                                Maximize your investment with our data-driven strategies and market expertise.
+                            <h3 className="text-xl font-bold text-[#3B82F6] mb-3">Potential ROI</h3>
+                            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+                                Whether you are looking to buy a fixer-upper or renovate your current home for sale, we will walk you through potential returns for projects.
                             </p>
                         </div>
 
-                        <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
-                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                                <FaDraftingCompass size={32} />
+                        {/* Item 2 */}
+                        <div className="flex flex-col items-center">
+                            <div className="w-20 h-20 rounded-full border-2 border-[#3B82F6] flex items-center justify-center mb-6 bg-white">
+                                <FaChartLine size={32} className="text-[#3B82F6]" />
                             </div>
-                            <h3 className="text-xl font-bold mb-4">Design</h3>
-                            <p className="text-gray-600">
-                                World-class architectural and interior design suggestions to increase property value.
+                            <h3 className="text-xl font-bold text-[#3B82F6] mb-3">Design</h3>
+                            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+                                Our background in interior design makes the perfect guide through your design options and coordinating contractors to complete the home upgrade.
                             </p>
                         </div>
 
-                        <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
-                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                                <FaBullhorn size={32} />
+                        {/* Item 3 */}
+                        <div className="flex flex-col items-center">
+                            <div className="w-20 h-20 rounded-full border-2 border-[#3B82F6] flex items-center justify-center mb-6 bg-white">
+                                <FaBullhorn size={32} className="text-[#3B82F6]" />
                             </div>
-                            <h3 className="text-xl font-bold mb-4">Marketing</h3>
-                            <p className="text-gray-600">
-                                Strategic marketing campaigns that reach the right audience at the right time.
+                            <h3 className="text-xl font-bold text-[#3B82F6] mb-3">Marketing</h3>
+                            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+                                Staging consultation, professional photos and a sophisticated digital marketing plan accompany every listing to reach today's buyers.
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ABOUT US & COLLAGE SECTION */}
+            <section className="py-20 bg-white relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Background decorative elements */}
+                    <div className="absolute top-0 left-0 w-64 h-64 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 -translate-x-1/2"></div>
+                    <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 translate-x-1/2"></div>
+
+                    <div className="flex flex-col items-center">
+                        {/* Image Compilation */}
+                        <div className="relative w-full max-w-5xl h-[400px] md:h-[500px] mb-20">
+                            {/* Center Image */}
+                            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-64 md:w-80 shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1560518883-ce09059ee971?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Meeting" className="w-full h-auto rounded-lg" />
+                            </div>
+
+                            {/* Left Image */}
+                            <div className="absolute left-4 md:left-20 top-20 z-10 w-48 md:w-64 shadow-xl">
+                                <img src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Handshake" className="w-full h-auto rounded-lg" />
+                                {/* Orange decorative corner */}
+                                <div className="absolute -bottom-4 -left-4 w-12 h-12 border-b-4 border-l-4 border-[#F97316] -z-10"></div>
+                            </div>
+
+                            {/* Right Image */}
+                            <div className="absolute right-4 md:right-20 bottom-20 z-10 w-48 md:w-64 shadow-xl">
+                                <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Family" className="w-full h-auto rounded-lg" />
+                                {/* Orange decorative corner */}
+                                <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-4 border-r-4 border-[#F97316] -z-10"></div>
+                            </div>
+
+                            {/* Blue decorative squares */}
+                            <div className="absolute left-1/2 top-10 transform -translate-x-40 md:-translate-x-60 w-12 h-12 bg-[#3B82F6]"></div>
+                            <div className="absolute right-1/2 top-20 transform translate-x-40 md:translate-x-60 w-16 h-16 border-t-8 border-r-8 border-[#3B82F6]"></div>
+                            <div className="absolute left-20 bottom-10 w-16 h-16 bg-blue-100 opacity-50"></div>
+                        </div>
+
+                        {/* About Us Content */}
+                        <div className="text-center max-w-3xl">
+                            <div className="mb-8">
+                                <h2 className="text-3xl font-bold text-[#3B82F6] mb-2">About Us</h2>
+                                <div className="w-16 h-1 bg-[#3B82F6] mx-auto rounded-full"></div>
+                            </div>
+                            <p className="text-gray-500 mb-8 leading-relaxed">
+                                Fifteen years of experience in real estate, excellent customer service and a commitment to work hard, listen and follow through. We provide quality service to build relationships with clients and, more importantly, maintain those relationships by communicating effectively.
+                            </p>
+                            <button className="border-2 border-[#3B82F6] text-[#3B82F6] font-bold py-3 px-10 rounded-sm hover:bg-[#3B82F6] hover:text-white transition duration-300 uppercase tracking-widest text-sm">
+                                Learn More
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -131,7 +189,7 @@ const Home = () => {
                     {projects.length === 0 ? (
                         <p>Loading projects...</p>
                     ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {projects.map(project => (
                                 <div key={project._id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
                                     <div className="h-48 overflow-hidden">
@@ -144,6 +202,9 @@ const Home = () => {
                                     <div className="p-6 text-left">
                                         <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
                                         <p className="text-gray-600 text-sm line-clamp-3">{project.description}</p>
+                                        <button className="mt-4 text-primary font-bold hover:text-secondary uppercase text-sm tracking-wider">
+                                            Read More
+                                        </button>
                                     </div>
                                 </div>
                             ))}
@@ -159,25 +220,66 @@ const Home = () => {
                     {clients.length === 0 ? (
                         <p>Loading testimonials...</p>
                     ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                             {clients.map(client => (
-                                <div key={client._id} className="p-8 bg-gray-50 rounded-xl hover:shadow-lg transition duration-300">
-                                    <div className="flex flex-col items-center">
-                                        <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-4 border-white shadow-md">
-                                            <img
-                                                src={client.image.startsWith('http') ? client.image : `http://localhost:5000${client.image}`}
-                                                alt={client.name}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </div>
-                                        <p className="text-gray-600 italic mb-6">"{client.description}"</p>
-                                        <h4 className="font-bold text-lg text-primary">{client.name}</h4>
-                                        <p className="text-secondary text-sm">{client.designation}</p>
+                                <div key={client._id} className="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
+                                    <div className="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-white shadow-md">
+                                        <img
+                                            src={client.image.startsWith('http') ? client.image : `http://localhost:5000${client.image}`}
+                                            alt={client.name}
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
+                                    <p className="text-gray-600 italic text-sm mb-4">"{client.description}"</p>
+                                    <h4 className="font-bold text-base text-primary">{client.name}</h4>
+                                    <p className="text-secondary text-xs font-semibold">{client.designation}</p>
+                                    {client.location && <p className="text-gray-400 text-xs">{client.location}</p>}
                                 </div>
                             ))}
                         </div>
                     )}
+                </div>
+            </section>
+
+            {/* LEARN MORE SECTION */}
+            <section className="relative py-32 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')" }}>
+                <div className="absolute inset-0 bg-black opacity-50"></div>
+                <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                        Learn more about our listing process, as well as our additional staging and design work.
+                    </h2>
+                    <button className="bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+                        LEARN MORE
+                    </button>
+                </div>
+            </section>
+
+            {/* NEWSLETTER SECTION */}
+            <section className="py-10 bg-[#3B82F6]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between text-white">
+                    {/* Left: Navigation Links */}
+                    <div className="flex flex-wrap justify-center md:justify-start gap-6 md:gap-8 text-sm font-medium mb-6 md:mb-0">
+                        <a href="#" className="hover:text-blue-100 transition">Home</a>
+                        <a href="#services" className="hover:text-blue-100 transition">Services</a>
+                        <a href="#projects" className="hover:text-blue-100 transition">Projects</a>
+                        <a href="#testimonials" className="hover:text-blue-100 transition">Testimonials</a>
+                        <a href="/contact" className="hover:text-blue-100 transition">Contact</a>
+                    </div>
+
+                    {/* Right: Subscribe Form */}
+                    <div className="flex flex-col sm:flex-row items-center gap-4">
+                        <span className="font-semibold whitespace-nowrap">Subscribe Us</span>
+                        <div className="flex items-center bg-[#3B82F6] border border-white rounded-lg overflow-hidden p-1">
+                            <input
+                                type="email"
+                                placeholder="Enter Email Address"
+                                className="bg-transparent text-white px-4 py-2 outline-none placeholder-blue-100 text-sm w-64"
+                            />
+                            <button className="bg-white text-[#3B82F6] px-6 py-2 rounded-md font-bold text-sm hover:bg-gray-100 transition">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
