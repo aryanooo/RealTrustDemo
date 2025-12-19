@@ -36,7 +36,7 @@ const Home = () => {
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center justify-between">
-                     <motion.div
+                    <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
@@ -86,40 +86,38 @@ const Home = () => {
             </section>
 
             {/* "WHY CHOOSE US" SECTION */}
-             <section className="py-20 bg-white" id="services">
+            <section className="py-20 bg-white" id="services">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold text-primary mb-12">Why Choose Us?</h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
-                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                                <FaChartLine size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4">Potential ROI</h3>
-                            <p className="text-gray-600">
-                                Maximize your investment with our data-driven strategies and market expertise.
-                            </p>
+                    <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
+                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                            <FaChartLine size={32} />
                         </div>
+                        <h3 className="text-xl font-bold mb-4">Potential ROI</h3>
+                        <p className="text-gray-600">
+                            Maximize your investment with our data-driven strategies and market expertise.
+                        </p>
+                    </div>
 
-                        <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
-                            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary">
-                                <FaDraftingCompass size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4">Design</h3>
-                            <p className="text-gray-600">
-                                World-class architectural and interior design suggestions to increase property value.
-                            </p>
+                    <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
+                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                            <FaDraftingCompass size={32} />
                         </div>
+                        <h3 className="text-xl font-bold mb-4">Design</h3>
+                        <p className="text-gray-600">
+                            World-class architectural and interior design suggestions to increase property value.
+                        </p>
+                    </div>
 
-                        <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
-                                <FaBullhorn size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4">Marketing</h3>
-                            <p className="text-gray-600">
-                                Strategic marketing campaigns that reach the right audience at the right time.
-                            </p>
+                    <div className="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition duration-300">
+                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                            <FaBullhorn size={32} />
                         </div>
+                        <h3 className="text-xl font-bold mb-4">Marketing</h3>
+                        <p className="text-gray-600">
+                            Strategic marketing campaigns that reach the right audience at the right time.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -132,12 +130,12 @@ const Home = () => {
                         <p>Loading projects...</p>
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                             {projects.map(project => (
+                            {projects.map(project => (
                                 <div key={project._id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
                                     <div className="h-48 overflow-hidden">
-                                         <img 
-                                            src={project.image ? `http://localhost:5000${project.image}` : "https://via.placeholder.com/400x300"} 
-                                            alt={project.title} 
+                                        <img
+                                            src={project.image ? `http://localhost:5000${project.image}` : "https://via.placeholder.com/400x300"}
+                                            alt={project.title}
                                             className="w-full h-full object-cover transform hover:scale-110 transition duration-500"
                                         />
                                     </div>
@@ -146,36 +144,36 @@ const Home = () => {
                                         <p className="text-gray-600 text-sm line-clamp-3">{project.description}</p>
                                     </div>
                                 </div>
-                             ))}
+                            ))}
                         </div>
                     )}
                 </div>
             </section>
 
-             {/* HAPPY CLIENTS SECTION */}
-             <section className="py-20 bg-white" id="testimonials">
+            {/* HAPPY CLIENTS SECTION */}
+            <section className="py-20 bg-white" id="testimonials">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold text-primary mb-12">Happy Clients</h2>
                     {clients.length === 0 ? (
                         <p>Loading testimonials...</p>
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                             {clients.map(client => (
+                            {clients.map(client => (
                                 <div key={client._id} className="p-8 bg-gray-50 rounded-xl hover:shadow-lg transition duration-300">
                                     <div className="flex flex-col items-center">
-                                         <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-4 border-white shadow-md">
-                                            <img 
-                                                src={client.image ? `http://localhost:5000${client.image}` : "https://via.placeholder.com/150"} 
-                                                alt={client.name} 
+                                        <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-4 border-white shadow-md">
+                                            <img
+                                                src={client.image ? `http://localhost:5000${client.image}` : "https://via.placeholder.com/150"}
+                                                alt={client.name}
                                                 className="w-full h-full object-cover"
                                             />
-                                         </div>
-                                         <p className="text-gray-600 italic mb-6">"{client.description}"</p>
-                                         <h4 className="font-bold text-lg text-primary">{client.name}</h4>
-                                         <p className="text-secondary text-sm">{client.designation}</p>
+                                        </div>
+                                        <p className="text-gray-600 italic mb-6">"{client.description}"</p>
+                                        <h4 className="font-bold text-lg text-primary">{client.name}</h4>
+                                        <p className="text-secondary text-sm">{client.designation}</p>
                                     </div>
                                 </div>
-                             ))}
+                            ))}
                         </div>
                     )}
                 </div>
