@@ -9,7 +9,7 @@ const projects = [
   {
     title: 'Consulting',
     description: 'Expert advice to navigate the complex real estate market with confidence.',
-    image: 'https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Design',
@@ -24,7 +24,7 @@ const projects = [
   {
     title: 'Consultation & Marketing',
     description: 'Strategic consultation paired with aggressive marketing to maximize your property value.',
-    image: 'https://images.unsplash.com/photo-1512915922610-d313a4e38505?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Consultation',

@@ -104,7 +104,7 @@ const Home = () => {
                         <div className="relative z-10 flex items-center gap-8">
                             {/* Main Center Image (Left in this group) */}
                             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-[6px] border-white shadow-2xl overflow-hidden bg-white">
-                                <img src="https://images.unsplash.com/photo-1560518883-ce09059ee971?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Realtor with House Model" className="w-full h-full object-cover" />
+                                <img src="/realtor-main.png" alt="Realtor with House Model" className="w-full h-full object-cover" />
                             </div>
 
                             {/* Right Column Images */}
