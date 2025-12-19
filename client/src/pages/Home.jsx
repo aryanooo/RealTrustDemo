@@ -142,7 +142,7 @@ const Home = () => {
                         <div className="relative w-full max-w-5xl h-[400px] md:h-[500px] mb-20">
                             {/* Center Image */}
                             <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-64 md:w-80 shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1560518883-ce09059ee971?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Meeting" className="w-full h-auto rounded-lg" />
+                                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Meeting" className="w-full h-auto rounded-lg" />
                             </div>
 
                             {/* Left Image */}
