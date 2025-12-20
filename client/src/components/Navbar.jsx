@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
                         <Link to="/" className="flex items-center">
-                            <img src="/src/assets/logo.png" alt="Real Trust Logo" className="h-12 w-auto" />
+                            <img src={logo} alt="Real Trust Logo" className="h-12 w-auto" />
                             <span className="ml-2 text-2xl font-bold text-primary">Real <span className="text-primary font-normal">Trust</span></span>
                         </Link>
                     </div>
