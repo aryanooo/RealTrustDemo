@@ -355,9 +355,26 @@ const Home = () => {
                             <input
                                 type="email"
                                 placeholder="Enter Email Address"
+                                id="subscribe-email"
                                 className="bg-transparent text-white px-4 py-2 outline-none placeholder-blue-100 text-sm w-64"
                             />
-                            <button className="bg-white text-[#3B82F6] px-6 py-2 rounded-md font-bold text-sm hover:bg-gray-100 transition">
+                            <button
+                                onClick={async () => {
+                                    const emailInput = document.getElementById('subscribe-email');
+                                    const email = emailInput.value;
+                                    if (!email) return alert('Please enter an email address.');
+
+                                    try {
+                                        await axios.post(`${API_URL}/api/subscribe`, { email });
+                                        alert('Subscribed successfully! check your email.');
+                                        emailInput.value = '';
+                                    } catch (err) {
+                                        console.error(err);
+                                        alert(err.response?.data?.message || 'Subscription failed.');
+                                    }
+                                }}
+                                className="bg-white text-[#3B82F6] px-6 py-2 rounded-md font-bold text-sm hover:bg-gray-100 transition"
+                            >
                                 Subscribe
                             </button>
                         </div>
