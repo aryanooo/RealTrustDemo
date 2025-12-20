@@ -13,17 +13,56 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const Home = () => {
     const [projects, setProjects] = useState([]);
     const [clients, setClients] = useState([]);
+    const [error, setError] = useState(null);
+
+    console.log("Current API_URL:", API_URL); // Debug logging
 
     useEffect(() => {
+        console.log("DEBUG: Current API_URL:", API_URL);
+
         // Fetch Projects
-        axios.get(`${API_URL}/api/projects`)
-            .then(res => setProjects(res.data))
-            .catch(err => console.error(err));
+        const projectsUrl = `${API_URL}/api/projects`;
+        console.log("DEBUG: Fetching Projects from:", projectsUrl);
+
+        axios.get(projectsUrl)
+            .then(res => {
+                console.log("DEBUG: Projects API Response Status:", res.status);
+                console.log("DEBUG: Projects API Data Type:", typeof res.data);
+                console.log("DEBUG: Projects API Data Length:", Array.isArray(res.data) ? res.data.length : 'Not an array');
+                console.log("DEBUG: Projects API Full Data:", res.data);
+                setProjects(res.data);
+            })
+            .catch(err => {
+                console.error("DEBUG: Projects Fetch Error Full Object:", err);
+                if (err.response) {
+                    console.error("DEBUG: Projects Fetch Error Response Data:", err.response.data);
+                    console.error("DEBUG: Projects Fetch Error Response Status:", err.response.status);
+                    console.error("DEBUG: Projects Fetch Error Response Headers:", err.response.headers);
+                } else if (err.request) {
+                    console.error("DEBUG: Projects Fetch Error Request:", err.request);
+                } else {
+                    console.error("DEBUG: Projects Fetch Error Message:", err.message);
+                }
+                setError(`Failed to load projects: ${err.message}`);
+            });
 
         // Fetch Clients
-        axios.get(`${API_URL}/api/clients`)
-            .then(res => setClients(res.data))
-            .catch(err => console.error(err));
+        const clientsUrl = `${API_URL}/api/clients`;
+        console.log("DEBUG: Fetching Clients from:", clientsUrl);
+
+        axios.get(clientsUrl)
+            .then(res => {
+                console.log("DEBUG: Clients API Response Status:", res.status);
+                console.log("DEBUG: Clients API Data:", res.data);
+                setClients(res.data);
+            })
+            .catch(err => {
+                console.error("DEBUG: Clients Fetch Error Full Object:", err);
+                if (err.response) {
+                    console.error("DEBUG: Clients Fetch Error Response Data:", err.response.data);
+                    console.error("DEBUG: Clients Fetch Error Response Status:", err.response.status);
+                }
+            });
     }, []);
 
     return (
@@ -228,6 +267,7 @@ const Home = () => {
             <section className="py-20 bg-gray-50" id="projects">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold text-primary mb-12">Our Projects</h2>
+                    {error && <p className="text-red-500 mb-4">{error}</p>}
                     {projects.length === 0 ? (
                         <p>Loading projects...</p>
                     ) : (
